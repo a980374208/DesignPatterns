@@ -64,7 +64,6 @@ protected:
 }
 
 class CryptoStream:public DecoratorStream/*用于基类接口规范*/{
-	Stream* stream;/*用于函数多态调用*/
 public:
 	CryptoStream(Stream * stm):DecoratorStream(stm){	
 	}
@@ -85,7 +84,6 @@ public:
 };
 
 class BufferedStream :public DecoratorStream{
-	Stream* stream;
 public:
 	BufferedStream(Stream * stm):DecoratorStream(stm){	
 	virtual char Read(int number){
